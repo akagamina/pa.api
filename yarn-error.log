@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn dev
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.13.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/omer.dogan/Desktop/performance-analytics/pa.api/package.json: Unexpected token } in JSON at position 218
+      at JSON.parse (<anonymous>)
+      at /Users/omer.dogan/.config/yarn/global/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/omer.dogan/.config/yarn/global/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/omer.dogan/.config/yarn/global/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "pa.api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index",
+      "dev": "nodemon index",
+      "test": "echo \"Error: no test specified\" && exit 1",
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
