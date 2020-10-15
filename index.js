@@ -2,7 +2,7 @@ const express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
   firebase = require("firebase-admin"),
-  serviceAccount = require("../perfanalyzerapi.json"),
+  serviceAccount = require("./perfanalyzerapi.json"),
   dayjs = require('dayjs')
 
 require('dotenv').config()
@@ -21,8 +21,7 @@ app.get("/", (req, res) => {
   res.send("Hello World")
 })
 app.get("/log", (req, res) => {
-  const metricsJson = db.ref("metrics")
-  metricsJson.on("value", (snapshot) => {
+  db.ref("metrics").on("value", (snapshot) => {
     res.json(snapshot.val())
   })
 })
