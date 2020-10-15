@@ -2,11 +2,14 @@
   "name": "pa.api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "server.ts",
   "scripts": {
-    "start": "ts-node server/server.ts",
-    "dev": "nodemon -x ts-node server/server.ts",
-    "postinstall": "npm run tsc",
+    "start": "ts-node server.ts",
+    "dev": "ts-node server.ts",
+    "postinstall": "tsc",
     "tsc": "tsc",
     "test": "jest"
   },
