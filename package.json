@@ -7,10 +7,10 @@
   },
   "main": "server.ts",
   "scripts": {
-    "start": "node server.ts",
     "dev": "ts-node server.ts",
-    "postinstall": "tsc",
-    "tsc": "tsc",
+    "start": "node build/server.js",
+    "build": "tsc",
+    "postinstall": "npm run build",
     "test": "jest"
   },
   "author": "",
