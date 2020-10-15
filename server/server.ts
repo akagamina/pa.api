@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 app.get("/log", (req, res) => {
-  db.ref("metrics").once("value", (snapshot) => {
+  db.ref("metrics").once("value", (snapshot: { val: () => string }) => {
     res.json(snapshot.val());
   });
 });
