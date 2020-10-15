@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node server/server.ts",
     "dev": "nodemon -x ts-node server/server.ts",
-    "postinstall": "tsc",
+    "postinstall": "npm run tsc",
     "tsc": "tsc",
     "test": "jest"
   },
