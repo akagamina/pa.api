@@ -28,7 +28,7 @@ app.post('/log', (req, res) => {
   const { fcp, ttfb, domLoad, windowLoad } = JSON.parse(req.body)
 
   const getMetrics = {
-    createdAt: dayjs().format(),
+    createdAt: dayjs().locale("tr").format(),
     fcp: fcp,
     ttfb: ttfb,
     domLoad: domLoad,
