@@ -69,8 +69,6 @@ app.post("/log", (req: { body: string }, res: any) => {
   db.ref("metrics").push().set(getMetrics);
 });
 
-module.exports = app;
-
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));

@@ -42,7 +42,6 @@ app.post("/log", (req, res) => {
     console.log("getMetrics: ", getMetrics);
     db.ref("metrics").push().set(getMetrics);
 });
-module.exports = app;
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 //# sourceMappingURL=app.js.map
