@@ -58,7 +58,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "app.ts" /* Include every ts file in source folder */
+    "app.ts",
+    "*.json" /* Include every ts file in source folder */
   ],
   "exclude": ["node_modules" /* exclude everything in  node_modules */]
 }

@@ -1,11 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const bodyParser = require("body-parser"), firebase = require("firebase-admin"), serviceAccount = require("./perfanalyzerapi.json"), dayjs = require("dayjs");
-const app = express_1.default();
+const express = require("express"), bodyParser = require("body-parser"), firebase = require("firebase-admin"), serviceAccount = require("./perfanalyzerapi.json"), dayjs = require("dayjs"), app = express();
 require("dotenv").config();
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
@@ -49,4 +43,6 @@ app.post("/log", (req, res) => {
     db.ref("metrics").push().set(getMetrics);
 });
 module.exports = app;
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 //# sourceMappingURL=app.js.map
