@@ -7,8 +7,8 @@
   },
   "main": "server.ts",
   "scripts": {
-    "dev": "ts-node src/app",
-    "start": "node build/app.js",
+    "dev": "ts-node app",
+    "start": "node app",
     "build": "tsc",
     "postinstall": "npm run build",
     "test": "npx jest --runInBand --detectOpenHandles --colors --verbose --reporters=default",

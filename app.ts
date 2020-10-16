@@ -1,11 +1,9 @@
-import express from "express";
-
-const bodyParser = require("body-parser"),
+const express = require("express"),
+  bodyParser = require("body-parser"),
   firebase = require("firebase-admin"),
-  serviceAccount = require("../perfanalyzerapi.json"),
-  dayjs = require("dayjs");
-
-const app: express.Application = express();
+  serviceAccount = require("./perfanalyzerapi.json"),
+  dayjs = require("dayjs"),
+  app = express();
 
 require("dotenv").config();
 
@@ -31,16 +29,16 @@ const db = firebase.database();
 
 app.use(bodyParser.text());
 
-app.get("/", (req, res) => {
+app.get("/", (req: any, res: { send: (arg0: string) => void }) => {
   res.send("Hello World");
 });
-app.get("/log", (req, res) => {
+app.get("/log", (req: any, res: { json: (arg0: string) => void }) => {
   db.ref("metrics").once("value", (snapshot: { val: () => string }) => {
     res.json(snapshot.val());
   });
 });
 
-app.post("/log", (req, res) => {
+app.post("/log", (req: { body: string }, res: any) => {
   const { fcp, ttfb, domLoad, windowLoad } = JSON.parse(req.body);
 
   const getMetrics: Metrics = {
