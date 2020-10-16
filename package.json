@@ -7,11 +7,12 @@
   },
   "main": "server.ts",
   "scripts": {
-    "dev": "ts-node server.ts",
-    "start": "node build/server.js",
+    "dev": "ts-node src/app",
+    "start": "node build/app.js",
     "build": "tsc",
     "postinstall": "npm run build",
-    "test": "jest"
+    "test": "npx jest --runInBand --detectOpenHandles --colors --verbose --reporters=default",
+    "test:ci": "npx jest --ci --runInBand --silent --colors --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,8 @@
     "typescript": "^4.0.3"
   },
   "devDependencies": {
-    "jest": "^26.5.3"
+    "jest": "^26.5.3",
+    "jest-junit": "^12.0.0",
+    "ts-jest": "^26.4.1"
   }
 }

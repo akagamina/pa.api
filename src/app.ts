@@ -2,7 +2,7 @@ import express from "express";
 
 const bodyParser = require("body-parser"),
   firebase = require("firebase-admin"),
-  serviceAccount = require("./perfanalyzerapi.json"),
+  serviceAccount = require("../perfanalyzerapi.json"),
   dayjs = require("dayjs");
 
 const app: express.Application = express();
@@ -70,6 +70,8 @@ app.post("/log", (req, res) => {
 
   db.ref("metrics").push().set(getMetrics);
 });
+
+module.exports = app;
 
 const PORT = process.env.PORT || 3000;
 
