@@ -59,7 +59,7 @@
   "include": [
     "src/**/*.ts",
     "app.ts",
-    "*.json" /* Include every ts file in source folder */
+    "static/*.json" /* Include every ts file in source folder */
   ],
   "exclude": ["node_modules" /* exclude everything in  node_modules */]
 }

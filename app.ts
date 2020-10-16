@@ -1,7 +1,7 @@
 const express = require("express"),
   bodyParser = require("body-parser"),
   firebase = require("firebase-admin"),
-  serviceAccount = require("./perfanalyzerapi.json"),
+  serviceAccount = require("./static/perfanalyzerapi.json"),
   dayjs = require("dayjs"),
   app = express();
 

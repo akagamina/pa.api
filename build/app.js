@@ -1,5 +1,5 @@
 "use strict";
-const express = require("express"), bodyParser = require("body-parser"), firebase = require("firebase-admin"), serviceAccount = require("./perfanalyzerapi.json"), dayjs = require("dayjs"), app = express();
+const express = require("express"), bodyParser = require("body-parser"), firebase = require("firebase-admin"), serviceAccount = require("./static/perfanalyzerapi.json"), dayjs = require("dayjs"), app = express();
 require("dotenv").config();
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
