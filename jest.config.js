@@ -1,6 +1,11 @@
 exports = {
-  preset: 'ts-jest',
+  preset: '@babel/preset-typescript',
   testEnvironment: 'node',
+  moduleFileExtensions: [
+    "js",
+    "ts",
+    "tsx"
+  ],
   reporters: [
     'default',
     [
